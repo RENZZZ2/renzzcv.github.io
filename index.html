@@ -1,0 +1,92 @@
+=<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Converter Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>File Converter Tool</h1>
+        </header>
+        <main>
+            <!-- Konversi TXT ke VCF -->
+            <section class="file-section">
+                <h2>Konversi TXT ke VCF</h2>
+                <input type="file" id="txt-file" accept=".txt">
+                <input type="text" id="contact-name" placeholder="Nama Kontak" required>
+                <input type="number" id="contact-count" placeholder="Jumlah Kontak per File" required>
+                <input type="text" id="vcf-file-name" placeholder="Nama File VCF" required>
+                <button onclick="convertTxtToVcf()">Konversi</button>
+                <p id="file-info"></p>
+            </section>
+
+            <!-- Gabungkan File TXT -->
+            <section class="file-section">
+                <h2>Gabungkan File TXT</h2>
+                <input type="file" id="merge-files" accept=".txt" multiple>
+                <input type="text" id="merged-file-name" placeholder="Nama File Gabungan" required>
+                <button onclick="mergeTxtFiles()">Gabungkan</button>
+                <p id="merge-file-info"></p>
+            </section>
+
+            <!-- Konversi VCF ke TXT -->
+            <section class="file-section">
+                <h2>Konversi VCF ke TXT</h2>
+                <input type="file" id="vcf-files" accept=".vcf" multiple>
+                <input type="text" id="txt-file-name" placeholder="Nama File TXT" required>
+                <button onclick="convertVcfToTxt()">Konversi</button>
+                <p id="vcf-to-txt-info"></p>
+            </section>
+
+            <!-- Konversi PDF ke Word -->
+            <section class="file-section">
+                <h2>Konversi PDF ke Word</h2>
+                <input type="file" id="pdf-file" accept=".pdf">
+                <input type="text" id="word-file-name" placeholder="Nama File Word" required>
+                <button onclick="convertPdfToWord()">Konversi</button>
+                <p id="pdf-to-word-info"></p>
+            </section>
+
+            <!-- Konversi Word ke PDF -->
+            <section class="file-section">
+                <h2>Konversi Word ke PDF</h2>
+                <input type="file" id="word-file" accept=".doc,.docx">
+                <input type="text" id="pdf-output-name" placeholder="Nama File PDF" required>
+                <button onclick="convertWordToPdf()">Konversi</button>
+                <p id="word-to-pdf-info"></p>
+            </section>
+
+            <!-- Split File VCF -->
+            <section class="file-section">
+                <h2>Pecah File VCF</h2>
+                <input type="file" id="vcf-split-file" accept=".vcf">
+                <input type="number" id="split-count" placeholder="Jumlah Kontak per File" required>
+                <input type="text" id="split-file-name" placeholder="Nama File VCF" required>
+                <button onclick="splitVcfFile()">Pecah</button>
+                <p id="vcf-split-info"></p>
+            </section>
+
+            <!-- Ganti Nama Kontak di VCF -->
+            <section class="file-section">
+                <h2>Ganti Nama Kontak di VCF</h2>
+                <input type="file" id="vcf-edit-file" accept=".vcf">
+                <input type="text" id="old-contact-name" placeholder="Nama Kontak Lama" required>
+                <input type="text" id="new-contact-name" placeholder="Nama Kontak Baru" required>
+                <input type="text" id="edit-file-name" placeholder="Nama File VCF" required>
+                <button onclick="editVcfContactName()">Ganti Nama</button>
+                <p id="vcf-edit-info"></p>
+            </section>
+
+            <!-- File yang Diupload -->
+            <section class="file-section">
+                <h2>File yang Diupload</h2>
+                <div id="uploaded-files" class="file-list"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
